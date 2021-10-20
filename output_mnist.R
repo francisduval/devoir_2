@@ -4,8 +4,7 @@ library(tidyverse)
 
 mnist <- 
   read_csv("mnist.csv") %>% 
-  filter(label %in% c(0, 1)) %>% 
-  mutate(label = factor(label, levels = c("1", "0")))
+  filter(label %in% c(1, 7))
 
 # ---------------------
 
@@ -16,8 +15,8 @@ ind_test <- 801:1000
 # ---------------------
 
 mnist_train <- mnist %>% slice(ind_train) 
-mnist_valid <- mnist %>% slice(ind_valid) 
-mnist_test <- mnist %>% slice(ind_test) 
+mnist_valid <- mnist %>% slice(ind_valid)
+mnist_test <- mnist %>% slice(ind_test)
 
 # ===============================================================================================================================
 
